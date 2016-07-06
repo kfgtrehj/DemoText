@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+    </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.1dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:background="#000000">-->
+    <!--</LinearLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+
+        android:gravity="center_vertical">
+        <com.geren.caozhi.myapplication.tabbar.Tabbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tabbar">
+            <com.geren.caozhi.myapplication.tabbar.TabbarItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/myTabbarItem1"/>
+            <com.geren.caozhi.myapplication.tabbar.TabbarItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/myTabbarItem2"/>
+            <com.geren.caozhi.myapplication.tabbar.TabbarItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/myTabbarItem3"/>
+            <com.geren.caozhi.myapplication.tabbar.TabbarItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/myTabbarItem4"/>
+
+        </com.geren.caozhi.myapplication.tabbar.Tabbar>
+    </LinearLayout>
+</LinearLayout>
