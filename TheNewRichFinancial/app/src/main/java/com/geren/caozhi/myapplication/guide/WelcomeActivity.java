@@ -1,4 +1,4 @@
-package com.geren.caozhi.myapplication;
+package com.geren.caozhi.myapplication.guide;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.geren.caozhi.myapplication.R;
 import com.geren.caozhi.myapplication.tabbar.TextActivitty;
 
 /**

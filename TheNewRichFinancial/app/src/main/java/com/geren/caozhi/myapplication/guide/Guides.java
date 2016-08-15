@@ -1,4 +1,4 @@
-package com.geren.caozhi.myapplication;
+package com.geren.caozhi.myapplication.guide;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,9 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.geren.caozhi.myapplication.R;
+import com.geren.caozhi.myapplication.ViewPagerAdapter;
 import com.geren.caozhi.myapplication.tabbar.TextActivitty;
 import java.util.ArrayList;
 import java.util.List;

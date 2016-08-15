@@ -13,17 +13,21 @@
         </activity>
         <activity android:name=".More">
         </activity>
-       <activity android:name=".Guides">
+       <activity android:name=".guide.Guides">
 
      </activity>
-        <activity android:name=".WelcomeActivity">
+        <activity android:name=".guide.WelcomeActivity">
+
+        </activity>
+
+        <activity
+            android:name=".activity.LoadActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

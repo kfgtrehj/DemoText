@@ -20,8 +20,6 @@ public class SimpleAdapterDome extends Activity {
     private String[] dates = {"2016-06-29","2016-06-27"};
     private String[] particularss = {"详情","详情"};
 
-
-
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list);
