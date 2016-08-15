@@ -44,15 +44,15 @@
             >
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="190dp"
                 android:orientation="vertical"
-                android:layout_marginBottom="10dp"
                 android:background="#ffffff">
                 <android.support.v4.view.ViewPager
                     android:id="@+id/viewpager"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"/>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -265,7 +265,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="10dp">
+                >
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
@@ -392,13 +392,18 @@
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="10dp"/>
                 </RelativeLayout>
-
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="1dp"
                 android:orientation="vertical"
-                android:background="#ffffff">
+                android:background="#d4daff">
+            </LinearLayout>
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:orientation="vertical"-->
+                <!--android:background="#ffffff">-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -407,12 +412,9 @@
                     android:gravity="center_horizontal"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center_horizontal"/>
-            </LinearLayout>
+            <!--</LinearLayout>-->
 
         </LinearLayout>
-
     </ScrollView>
-
-
 
 </LinearLayout>

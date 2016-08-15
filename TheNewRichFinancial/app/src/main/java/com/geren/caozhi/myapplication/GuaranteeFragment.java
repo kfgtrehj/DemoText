@@ -10,6 +10,7 @@ import android.webkit.WebView;
 
 /**
  * Created by Administrator on 2016/7/5.
+ * 保障页面
  */
 public class GuaranteeFragment extends Fragment{
     private WebView webview;

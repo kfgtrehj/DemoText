@@ -7,7 +7,6 @@ import android.widget.Checkable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.geren.caozhi.myapplication.R;
 
 /**
@@ -28,23 +27,18 @@ public class TabbarItem extends LinearLayout implements Checkable{
     public void setPressRes(int pressRes) {
         this.pressRes = pressRes;
     }
-
     public void setDefulatRes(int defulatRes) {
         this.defulatRes = defulatRes;
     }
-
-
 
     public TabbarItem(Context context) {
         super(context);
         init(context);
     }
-
     public TabbarItem(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
-
     public TabbarItem(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
@@ -70,40 +64,33 @@ public class TabbarItem extends LinearLayout implements Checkable{
         itemImg = (ImageView) findViewById(R.id.imgtabbar);
 
     }
-
     private void onChecked() {
         if (getParent() instanceof Tabbar) {
             final Tabbar group = (Tabbar) getParent();
             group.check(getId());
         }
     }
-
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-
     }
     public void setTabbarText(String text){
         itemText.setText(text);
     }
     public void setTabarImgRes(int resId){
+
         itemImg.setImageResource(resId);
     }
-
-
     //设置当前的View被点击状态
     @Override
     public void setChecked(boolean checked) {
         if (isChecked == checked){
             return;
         }
-
-
         isChecked = checked;
         //设置状态
         setState(isChecked);
     }
-
     //设置状态
     private void setState(boolean isChecked) {
         if(isChecked){
@@ -112,7 +99,6 @@ public class TabbarItem extends LinearLayout implements Checkable{
             itemImg.setImageResource(defulatRes);
         }
     }
-
     //放回当前有没有被选中
     @Override
     public boolean isChecked() {

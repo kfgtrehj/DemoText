@@ -32,12 +32,12 @@
             android:rotation="45" />
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="140dp"
             android:orientation="horizontal"
             android:layout_below="@id/jh">
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
                 android:layout_weight="1">
                 <TextView
                     android:id="@+id/nj1"
@@ -46,7 +46,7 @@
                     android:text="11"
                     android:textSize="30dp"
                     android:layout_marginLeft="70dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="38dp"
                     android:textColor="#FFBB00"/>
                 <TextView
                     android:id="@+id/nj2"
@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:text=".0%"
                     android:layout_toRightOf="@+id/nj1"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="54dp"
                     android:textColor="#FFBB00"/>
                 <TextView
                     android:id="@+id/jz"
@@ -63,7 +63,7 @@
                     android:text="9%起"
                     android:textColor="#ffffff"
                     android:layout_marginLeft="105dp"
-                    android:layout_marginTop="14dp"
+                    android:layout_marginTop="32dp"
                     android:background="@drawable/plan"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -73,38 +73,62 @@
                     android:layout_marginLeft="70dp"/>
 
             </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:orientation="vertical"
                 android:layout_weight="1">
-                <TextView
-                    android:id="@+id/nj3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="365"
-                    android:textSize="30dp"
-                    android:layout_marginLeft="70dp"
-                    android:layout_marginTop="38dp"
-                    android:textColor="#FFBB00"/>
-
-                <TextView
-                    android:id="@+id/nj4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="天"
-                    android:layout_toRightOf="@+id/nj3"
-                    android:layout_marginTop="52dp"
-                    android:textColor="#FFBB00"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="锁定期"
-                    android:layout_below="@id/nj3"
-                    android:layout_marginLeft="70dp"
-                    />
-            </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    >
+                    <TextView
+                        android:id="@+id/nj3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="365"
+                        android:textSize="30dp"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginTop="38dp"
+                        android:textColor="#FFBB00"/>
+                    <TextView
+                        android:id="@+id/nj4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="天"
+                        android:layout_toRightOf="@+id/nj3"
+                        android:layout_marginTop="52dp"
+                        android:textColor="#FFBB00"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="锁定期"
+                        android:layout_below="@id/nj3"
+                        android:layout_marginLeft="70dp"
+                        />
+                </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:background="#d4e2ff">
+        <ImageView
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+             />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:orientation="horizontal"
+        android:background="#d4daff">
+
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

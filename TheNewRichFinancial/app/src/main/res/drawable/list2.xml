@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 定义几何图形角的弧度-->
+    <corners
+        android:topRightRadius="8dp"
+        android:bottomRightRadius="8dp"
+        />
+    <!-- 定义使用颜色填充-->
+    <stroke
+        android:color="#ffffff"/>
+</shape>

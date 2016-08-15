@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2016/7/5.
+ * 我的页面
  */
 public class MineFragment extends Fragment {
 
@@ -25,9 +26,7 @@ public class MineFragment extends Fragment {
 
         viewPager = (ViewPager) view.findViewById(R.id.viewPager1);
         viewPager.setAdapter(new MyViewPagerAdapter());
-
         return view;
-
     }
     class MyViewPagerAdapter extends PagerAdapter {
         String[] names = {"周计划","我的推广"};
@@ -42,22 +41,16 @@ public class MineFragment extends Fragment {
         }
         @Override
         public boolean isViewFromObject(View arg0, Object arg1) {
-            // TODO Auto-generated method stub
             return arg0 == arg1;
         }
         @Override
         public int getCount() {
-            // TODO Auto-generated method stub
             return names.length;
         }
         @Override
-        public void destroyItem(ViewGroup container, int position,
-                                Object object) {
-            // TODO Auto-generated method stub
-
+        public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView(views.get(position));
         }
-
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             // TODO Auto-generated method stub

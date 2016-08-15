@@ -32,14 +32,12 @@ public class Tabbar extends LinearLayout{
     }
     // 当前被选中的Item ID
     int mCheckedId = -1;
-
     //定义一个接口 当Item被点击的时候，就调用onChecked 方法
     private OnTabGroupCheckedListener onTabGroupCheckedListener = null;
     public void setOnTabGroupCheckedListener(
             OnTabGroupCheckedListener onTabGroupCheckedListener) {
         this.onTabGroupCheckedListener = onTabGroupCheckedListener;
     }
-
     //创建ViewGroup的时候，如果ViewGroup 有子View就会调用下面的方法
     /**
      * 第一个参数 View child

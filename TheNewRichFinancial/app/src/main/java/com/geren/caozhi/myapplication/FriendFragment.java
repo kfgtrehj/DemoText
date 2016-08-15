@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 /**
  * Created by caozhi on 2016/7/5.
+ * 好友页面
  */
 public class FriendFragment extends Fragment{
     @Nullable
