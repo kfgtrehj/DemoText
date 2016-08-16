@@ -20,11 +20,12 @@ public class LoadActivity extends BaseActivity{
         //如果用户第一次登录， 设置，第一次登录为false.同时去引导页面
         if(isFirst){
             SharedPreferencesUtils.setParam(this, "Boolean", false);
-            Intent i = new Intent(LoadActivity.this, Guides.class);
-            startActivity(i);
-            finish();
+//            Intent i = new Intent(LoadActivity.this, Guides.class);
+//            startActivity(i);
+//            finish();
             showToast("去引导");
         }else{
+            //去首页
             Intent i = new Intent(LoadActivity.this, TextActivitty.class);
             startActivity(i);
             finish();

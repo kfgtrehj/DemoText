@@ -33,6 +33,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
         viewPager = (ViewPager) view.findViewById(R.id.viewpager);
         viewPager.setAdapter(new MyViewPagerAdapter());
+
         return view;
     }
 
@@ -41,7 +42,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         Intent intent = new Intent();
         switch (v.getId()){
             case R.id.tiaozhuan1:
-                intent.setClass(getActivity(),SimpleAdapterDome.class);
+                intent.setClass(getActivity(),PromotionActivity.class);
                 startActivity(intent);
                 break;
             case R.id.tiaozhuan2:

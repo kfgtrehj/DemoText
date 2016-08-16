@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#00213f"
+        >
+        <ImageView
+            android:id="@+id/image_promotion"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:src="@mipmap/arrow_white_left"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+
+            >
+
+            <Button
+                android:id="@+id/bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="8dp"
+                android:text="活动"
+                android:textColor="#ffffff"
+                android:background="@drawable/promotion_left"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="动态"
+                android:textColor="@color/white"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/promotion_right"
+                android:layout_toRightOf="@+id/bt"
+                />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

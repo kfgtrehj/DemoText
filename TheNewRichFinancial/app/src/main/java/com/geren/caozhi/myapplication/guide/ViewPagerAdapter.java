@@ -1,4 +1,4 @@
-package com.geren.caozhi.myapplication;
+package com.geren.caozhi.myapplication.guide;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -31,13 +31,11 @@ public class ViewPagerAdapter extends PagerAdapter {
         ((ViewPager)container).addView(views.get(position));
         //返回当前view
         return views.get(position);
-
     }
     @Override
     public int getCount() {
         return views.size(); //返回当前view的一个长度
     }
-
     @Override
     public boolean isViewFromObject(View arg0, Object arg1) {
         //判断当前的View是不是我们需要的对象

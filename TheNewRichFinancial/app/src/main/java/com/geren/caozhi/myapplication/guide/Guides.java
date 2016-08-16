@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.geren.caozhi.myapplication.R;
-import com.geren.caozhi.myapplication.ViewPagerAdapter;
 import com.geren.caozhi.myapplication.tabbar.TextActivitty;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +27,7 @@ public class Guides extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.guide);
+//        setContentView(R.layout.load_activity_view);
         initViews();
     }
     //用来加载滑动的View

@@ -1,12 +1,14 @@
 package com.geren.caozhi.myapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.geren.caozhi.myapplication.guide.Guides;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 /**
@@ -25,6 +27,7 @@ public class BaseActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.load_activity_view);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             setTranslucentStatus(true);
         }
@@ -45,8 +48,6 @@ public class BaseActivity extends Activity {
         }
         win.setAttributes(winParams);
     }
-
-
 
     /**
      * 显示一个弹出框 内容，可变。

@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/image4"
-        android:background="@mipmap/splash_img4"/>
+        android:src="@mipmap/splash_img4"
+        android:background="#ffffff"/>
 
 </RelativeLayout>
