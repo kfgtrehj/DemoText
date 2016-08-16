@@ -8,17 +8,14 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-        <activity android:name=".tabbar.TextActivitty">
+        <activity android:name=".activity.MainActivity">
 
         </activity>
-        <activity android:name=".More">
+        <activity android:name=".activity.MoreActivity">
         </activity>
-       <activity android:name=".guide.Guides">
+       <activity android:name=".activity.guide.Guides">
 
      </activity>
-        <activity android:name=".guide.WelcomeActivity">
-
-        </activity>
 
         <activity
             android:name=".activity.LoadActivity"

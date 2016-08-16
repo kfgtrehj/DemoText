@@ -1,4 +1,4 @@
-package com.geren.caozhi.myapplication.guide;
+package com.geren.caozhi.myapplication.activity.guide;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.geren.caozhi.myapplication.R;
-import com.geren.caozhi.myapplication.tabbar.TextActivitty;
+import com.geren.caozhi.myapplication.activity.MainActivity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +27,7 @@ public class Guides extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.load_activity_view);
+        setContentView(R.layout.guide);
         initViews();
     }
     //用来加载滑动的View
@@ -48,7 +48,7 @@ public class Guides extends Activity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Guides.this, TextActivitty.class);
+                Intent i = new Intent(Guides.this, MainActivity.class);
                 startActivity(i);
                 finish();
             }

@@ -4,35 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="#00213f">
-        <ImageView
-            android:id="@+id/tiaozhuan1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/financial_promotion"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="新富金融"
-            android:textSize="20dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:textColor="#ffffff"
-            />
-        <ImageView
-            android:id="@+id/tiaozhuan2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/financial_more"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="20dp"/>
-    </RelativeLayout>
+    <include
+        layout="@layout/title_layout"
+        />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

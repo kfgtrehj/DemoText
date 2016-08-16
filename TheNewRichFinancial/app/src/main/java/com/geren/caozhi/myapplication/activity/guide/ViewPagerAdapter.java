@@ -1,4 +1,4 @@
-package com.geren.caozhi.myapplication.guide;
+package com.geren.caozhi.myapplication.activity.guide;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;

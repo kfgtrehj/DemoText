@@ -1,21 +1,23 @@
-package com.geren.caozhi.myapplication.tabbar;
+package com.geren.caozhi.myapplication.activity;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
-import com.geren.caozhi.myapplication.FriendFragment;
-import com.geren.caozhi.myapplication.GuaranteeFragment;
-import com.geren.caozhi.myapplication.MineFragment;
-import com.geren.caozhi.myapplication.HomeFragment;
+
+import com.geren.caozhi.myapplication.BaseActivity;
+import com.geren.caozhi.myapplication.activity.fragment.FriendFragment;
+import com.geren.caozhi.myapplication.activity.fragment.GuaranteeFragment;
+import com.geren.caozhi.myapplication.activity.fragment.MineFragment;
+import com.geren.caozhi.myapplication.activity.fragment.HomeFragment;
 import com.geren.caozhi.myapplication.R;
+import com.geren.caozhi.myapplication.tabbar.TabbarItem;
 
 /**
  * Created by Administrator on 2016/7/5.
  */
-public class TextActivitty extends Activity implements View.OnClickListener{
+public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     private TabbarItem myTabbarItem1;
     private TabbarItem myTabbarItem2;
@@ -25,7 +27,7 @@ public class TextActivitty extends Activity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
+        setContentView(R.layout.main_view);
 
         myTabbarItem1 = (TabbarItem) findViewById(R.id.myTabbarItem1);
         //设置tabbar 显示的string

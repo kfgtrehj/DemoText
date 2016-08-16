@@ -1,15 +1,17 @@
-package com.geren.caozhi.myapplication;
+package com.geren.caozhi.myapplication.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.geren.caozhi.myapplication.R;
+
 /**
  * Created by caozhi on 2016/7/1.
  * 更多页面
  */
-public class More extends Activity {
+public class MoreActivity extends Activity {
 
     private ImageView button;
 
@@ -22,7 +24,7 @@ public class More extends Activity {
             @Override
             public void onClick(View v) {
                 //后退到之前页面，当前页面被消除，可节省内存
-                More.this.finish();
+                MoreActivity.this.finish();
             }
         });
 

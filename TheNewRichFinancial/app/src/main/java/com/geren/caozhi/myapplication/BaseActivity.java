@@ -1,14 +1,13 @@
 package com.geren.caozhi.myapplication;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.geren.caozhi.myapplication.guide.Guides;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 /**
@@ -24,19 +23,47 @@ public class BaseActivity extends Activity {
      * 添加一句compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
      * 大概意思是：此项目依赖另一个项目
      * */
+
+    private SystemBarTintManager tintManager = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.load_activity_view);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setTranslucentStatus(true);
-        }
-
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
-        tintManager.setStatusBarTintEnabled(true);
-        tintManager.setStatusBarTintResource(R.color.white);//通知栏所需颜色
+        tintManager = new SystemBarTintManager(this);
+        initWindow();
+//        setContentView(R.layout.load_activity_view);
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//            setTranslucentStatus(true);
+//        }
+//
+//        tintManager.setStatusBarTintEnabled(true);
+//        tintManager.setStatusBarTintResource(R.color.white);//通知栏所需颜色
 
     }
+    @TargetApi(19)
+    protected void initWindow(int colorRes) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            tintManager = new SystemBarTintManager(this);
+            tintManager.setStatusBarTintColor(getResources().getColor(colorRes));
+            tintManager.setStatusBarTintEnabled(true);
+        }
+        //mDecorView = getWindow().getDecorView();
+    }
+
+    @TargetApi(19)
+    private void initWindow() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            tintManager = new SystemBarTintManager(this);
+            tintManager.setStatusBarTintColor(getResources().getColor(R.color.title_blue));
+            tintManager.setStatusBarTintEnabled(true);
+        }
+       // mDecorView = getWindow().getDecorView();
+    }
+
+
     private void setTranslucentStatus(boolean on) {
         Window win = getWindow();
         WindowManager.LayoutParams winParams = win.getAttributes();

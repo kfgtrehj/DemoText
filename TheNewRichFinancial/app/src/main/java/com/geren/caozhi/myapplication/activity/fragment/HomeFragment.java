@@ -1,4 +1,4 @@
-package com.geren.caozhi.myapplication;
+package com.geren.caozhi.myapplication.activity.fragment;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -10,6 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+
+import com.geren.caozhi.myapplication.PromotionActivity;
+import com.geren.caozhi.myapplication.R;
+import com.geren.caozhi.myapplication.activity.MoreActivity;
+
 import java.util.ArrayList;
 
 
@@ -20,16 +26,18 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment implements View.OnClickListener{
 
     private ViewPager viewPager;
+    private ImageView financialPromotion;
+    private ImageView financialMore;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.manage, container, false);
 
-        ImageView button1 = (ImageView) view.findViewById(R.id.tiaozhuan1);
-        ImageView button2 = (ImageView) view.findViewById(R.id.tiaozhuan2);
+        financialPromotion = (ImageView) view.findViewById(R.id.financialPromotion);
+        financialMore = (ImageView) view.findViewById(R.id.financialMore);
 
-        button1.setOnClickListener(this);
-        button2.setOnClickListener(this);
+        financialPromotion.setOnClickListener(this);
+        financialMore.setOnClickListener(this);
 
         viewPager = (ViewPager) view.findViewById(R.id.viewpager);
         viewPager.setAdapter(new MyViewPagerAdapter());
@@ -41,12 +49,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         Intent intent = new Intent();
         switch (v.getId()){
-            case R.id.tiaozhuan1:
+            case R.id.financialPromotion:
                 intent.setClass(getActivity(),PromotionActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.tiaozhuan2:
-                intent.setClass(getActivity(),More.class);
+            case R.id.financialMore:
+                intent.setClass(getActivity(),MoreActivity.class);
                 startActivity(intent);
                 break;
         }
