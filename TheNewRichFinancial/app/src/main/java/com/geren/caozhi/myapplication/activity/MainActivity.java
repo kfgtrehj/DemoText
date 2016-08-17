@@ -42,6 +42,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         myTabbarItem1.setChecked(true);
 
 
+
         myTabbarItem2 = (TabbarItem) findViewById(R.id.myTabbarItem2);
         myTabbarItem2.setTabbarText("保障");
         myTabbarItem2.setDefulatRes(R.mipmap.security);

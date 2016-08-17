@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
+
 /**
  * Created by neil on 16/8/15.
  */
@@ -18,7 +19,7 @@ public class BaseActivity extends Activity {
     /**
      * 设置status Bar 采用开源控件 System bar Tint
      * @link https://github.com/jgilfelt/SystemBarTint
-     * 初始化
+     * 初始化  用来改变通知栏的颜色
      * 因为这是别人写的开源控件，要求了要在build.gradle中的dependencies，
      * 添加一句compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
      * 大概意思是：此项目依赖另一个项目
@@ -30,11 +31,9 @@ public class BaseActivity extends Activity {
         super.onCreate(savedInstanceState);
         tintManager = new SystemBarTintManager(this);
         initWindow();
-//        setContentView(R.layout.load_activity_view);
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
 //            setTranslucentStatus(true);
 //        }
-//
 //        tintManager.setStatusBarTintEnabled(true);
 //        tintManager.setStatusBarTintResource(R.color.white);//通知栏所需颜色
 

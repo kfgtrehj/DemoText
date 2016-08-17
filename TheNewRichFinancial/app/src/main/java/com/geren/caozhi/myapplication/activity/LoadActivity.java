@@ -3,7 +3,6 @@ package com.geren.caozhi.myapplication.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-
 import com.geren.caozhi.myapplication.BaseActivity;
 import com.geren.caozhi.myapplication.R;
 import com.geren.caozhi.myapplication.activity.guide.Guides;
@@ -36,17 +35,13 @@ public class LoadActivity extends BaseActivity{
         setContentView(R.layout.load_activity_view);
         boolean isFirst = (boolean) SharedPreferencesUtils.getParam(this, "isFirst", true);
         //如果用户第一次登录， 设置，第一次登录为false.同时去引导页面
-
         if(isFirst){
             mHandler.sendEmptyMessageDelayed(GO_GUIED, TIME);
         }else{
-            //去首页
             mHandler.sendEmptyMessageDelayed(GO_HOME, TIME);
             showToast("去首页");
         }
-
     }
-
     /**
      * 去引导页 同时设置第一次登陆为false
      * */
@@ -56,7 +51,6 @@ public class LoadActivity extends BaseActivity{
         startActivity(i);
         finish();
     }
-
     /**
      * 去主页
      * */
@@ -65,5 +59,4 @@ public class LoadActivity extends BaseActivity{
         startActivity(i);
         finish();
     }
-
 }
