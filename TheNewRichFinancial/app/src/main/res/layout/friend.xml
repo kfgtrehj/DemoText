@@ -158,8 +158,6 @@
                        android:layout_height="25dp"
                        android:src="@mipmap/arrow_white_right" />
                </LinearLayout>
-
-
             </RelativeLayout>
         </LinearLayout>
 
