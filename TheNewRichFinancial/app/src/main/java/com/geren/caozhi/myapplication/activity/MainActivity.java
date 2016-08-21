@@ -5,13 +5,12 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
-
 import com.geren.caozhi.myapplication.BaseActivity;
+import com.geren.caozhi.myapplication.R;
 import com.geren.caozhi.myapplication.activity.fragment.FriendFragment;
 import com.geren.caozhi.myapplication.activity.fragment.GuaranteeFragment;
-import com.geren.caozhi.myapplication.activity.fragment.MineFragment;
 import com.geren.caozhi.myapplication.activity.fragment.HomeFragment;
-import com.geren.caozhi.myapplication.R;
+import com.geren.caozhi.myapplication.activity.fragment.MineFragment;
 import com.geren.caozhi.myapplication.tabbar.TabbarItem;
 
 /**
@@ -23,6 +22,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     private TabbarItem myTabbarItem2;
     private TabbarItem myTabbarItem3;
     private TabbarItem myTabbarItem4;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,4 +107,19 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 break;
         }
     }
+//    protected void onResume(){
+//        int id = getIntent().getIntExtra("id", 0);
+//        if (id == 2){
+//            TabHost mTabHost = null;
+//            mTabHost.setCurrentTab(3);
+//            Fragment fragmen = new FriendFragment();
+//            FragmentManager fmanger =getFragmentManager();
+//            FragmentTransaction ftran =fmanger.beginTransaction();
+//            ftran.replace(R.id.franme_meun,fragmen);
+//            mit();
+//            info_meun.setChecked(true);
+//            li.setVisibility(View.GONE);
+//            super.onResume();
+//        }
+//    }
 }

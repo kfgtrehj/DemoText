@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- state_pressed="true" 就代表，按钮被点击的那个状态-->
+    <!-- state_pressed="false" 就代表，按钮未被点击的那个状态-->
+    <item
+        android:drawable="@drawable/my_shape2"
+        android:state_pressed="true" />
+    <!--state_focused="true" 就代表获得焦点的时候的状态-->
+    <!--state_focused="false" 就代表失去焦点的时候的状态-->
+    <item
+        android:drawable="@drawable/my_shape2"
+        android:state_focused="true" />
+    <!-- 默认状态。 没被点击，也没有焦点的时候 -->
+    <item
+        android:drawable="@drawable/my_shape1" />
+
+</selector>

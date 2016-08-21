@@ -1,392 +1,426 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
-    <include
-        layout="@layout/title_layout"
-        />
+    android:orientation="vertical">
+
+    <include layout="@layout/title_layout" />
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="190dp"
-                android:orientation="vertical"
-                android:background="#ffffff">
+                android:background="#ffffff"
+                android:orientation="vertical">
+
                 <android.support.v4.view.ViewPager
                     android:id="@+id/viewpager"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-               >
+                android:orientation="horizontal">
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical">
+
                     <TextView
                         android:layout_width="3dp"
                         android:layout_height="match_parent"
-                        android:background="#6315ff"/>
+                        android:background="#6315ff" />
+
                     <TextView
                         android:id="@+id/licai"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="理财金计划"
-                        android:textSize="15dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
-                        />
+                        android:text="理财金计划"
+                        android:textSize="15dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="热卖"
-                        android:textSize="15dp"
-                        android:textColor="#ffffff"
-                        android:background="@drawable/renmain"
                         android:layout_marginLeft="5dp"
+                        android:layout_marginTop="20dp"
                         android:layout_toRightOf="@id/licai"
-                        android:layout_marginTop="20dp"/>
+                        android:background="@drawable/renmain"
+                        android:text="热卖"
+                        android:textColor="#ffffff"
+                        android:textSize="15dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="7天起，收益递增"
-                        android:textSize="15dp"
+                        android:layout_below="@id/licai"
                         android:layout_marginLeft="10dp"
-                        android:layout_below="@id/licai"/>
+                        android:text="7天起，收益递增"
+                        android:textSize="15dp" />
                 </RelativeLayout>
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical">
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1">
+
                     <TextView
                         android:id="@+id/bai1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="%"
-                        android:layout_marginRight="10dp"
-                        android:textSize="15dp"
                         android:layout_alignParentRight="true"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="%"
+                        android:textSize="15dp" />
+
                     <TextView
                         android:id="@+id/wb1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="11"
                         android:layout_toLeftOf="@id/bai1"
-                        android:textSize="25dp"/>
+                        android:text="11"
+                        android:textSize="25dp" />
+
                     <TextView
                         android:id="@+id/bl1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="~"
-                        android:textSize="15dp"
                         android:layout_marginTop="7dp"
-                        android:layout_toLeftOf="@id/wb1"/>
+                        android:layout_toLeftOf="@id/wb1"
+                        android:text="~"
+                        android:textSize="15dp" />
+
                     <TextView
                         android:id="@+id/bai2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="%"
-                        android:textSize="15dp"
+                        android:layout_marginTop="10dp"
                         android:layout_toLeftOf="@id/bl1"
-                        android:layout_marginTop="10dp"/>
+                        android:text="%"
+                        android:textSize="15dp" />
+
                     <TextView
                         android:id="@+id/wb2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/bai2"
                         android:text="5"
-                        android:textSize="25dp"
-                        android:layout_toLeftOf="@id/bai2" />
+                        android:textSize="25dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="年化"
-                        android:textSize="15dp"
-                        android:layout_toLeftOf="@id/wb2"
+                        android:layout_marginRight="5dp"
                         android:layout_marginTop="6dp"
-                        android:layout_marginRight="5dp"/>
+                        android:layout_toLeftOf="@id/wb2"
+                        android:text="年化"
+                        android:textSize="15dp" />
                 </RelativeLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:orientation="horizontal"
-                android:background="#d4daff">
-            </LinearLayout>
+                android:background="#d4daff"
+                android:orientation="horizontal"></LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical">
+
                     <TextView
                         android:layout_width="3dp"
                         android:layout_height="match_parent"
-                        android:background="#ff9b2a"/>
+                        android:background="#ff9b2a" />
+
                     <TextView
                         android:id="@+id/licai1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="散标优品"
-                        android:textSize="15dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="20dp"/>
+                        android:layout_marginTop="20dp"
+                        android:text="散标优品"
+                        android:textSize="15dp" />
+
                     <Button
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:text="1"
-                        android:textSize="15dp"
-                        android:textColor="#ffffff"
-                        android:background="@drawable/renmain"
                         android:layout_marginLeft="5dp"
+                        android:layout_marginTop="20dp"
                         android:layout_toRightOf="@id/licai1"
-                        android:layout_marginTop="20dp"/>
+                        android:background="@drawable/renmain"
+                        android:text="1"
+                        android:textColor="#ffffff"
+                        android:textSize="15dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="3个月起，稳定收益"
-                        android:textSize="15dp"
+                        android:layout_below="@id/licai1"
                         android:layout_marginLeft="10dp"
-                        android:layout_below="@id/licai1"/>
+                        android:text="3个月起，稳定收益"
+                        android:textSize="15dp" />
                 </RelativeLayout>
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_gravity="center_vertical"
-                    >
+                    android:layout_weight="1">
+
                     <TextView
                         android:id="@+id/bai11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="%"
-                        android:layout_marginRight="10dp"
-                        android:textSize="15dp"
                         android:layout_alignParentRight="true"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="%"
+                        android:textSize="15dp" />
+
                     <TextView
                         android:id="@+id/wb11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="10"
                         android:layout_toLeftOf="@id/bai11"
-                        android:textSize="25dp"/>
+                        android:text="10"
+                        android:textSize="25dp" />
+
                     <TextView
                         android:id="@+id/bl11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="~"
-                        android:textSize="15dp"
                         android:layout_marginTop="7dp"
-                        android:layout_toLeftOf="@id/wb11"/>
+                        android:layout_toLeftOf="@id/wb11"
+                        android:text="~"
+                        android:textSize="15dp" />
+
                     <TextView
                         android:id="@+id/bai22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="%"
-                        android:textSize="15dp"
+                        android:layout_marginTop="10dp"
                         android:layout_toLeftOf="@id/bl11"
-                        android:layout_marginTop="10dp"/>
+                        android:text="%"
+                        android:textSize="15dp" />
+
                     <TextView
                         android:id="@+id/wb22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/bai22"
                         android:text="6"
-                        android:textSize="25dp"
-                        android:layout_toLeftOf="@id/bai22" />
+                        android:textSize="25dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="年化"
-                        android:textSize="15dp"
-                        android:layout_toLeftOf="@id/wb22"
+                        android:layout_marginRight="5dp"
                         android:layout_marginTop="6dp"
-                        android:layout_marginRight="5dp"/>
+                        android:layout_toLeftOf="@id/wb22"
+                        android:text="年化"
+                        android:textSize="15dp" />
                 </RelativeLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:orientation="horizontal">
-            </LinearLayout>
+                android:orientation="horizontal"></LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:orientation="horizontal"
-                android:background="#d4daff">
-            </LinearLayout>
+                android:background="#d4daff"
+                android:orientation="horizontal"></LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical">
+
                     <TextView
                         android:layout_width="3dp"
                         android:layout_height="match_parent"
-                        android:background="#15efff"/>
+                        android:background="#15efff" />
+
                     <TextView
                         android:id="@+id/licai11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="债权转让"
-                        android:textSize="15dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="20dp"/>
+                        android:layout_marginTop="20dp"
+                        android:text="债权转让"
+                        android:textSize="15dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="期限短，收益高"
-                        android:textSize="15dp"
+                        android:layout_below="@id/licai11"
                         android:layout_marginLeft="10dp"
-                        android:layout_below="@id/licai11"/>
+                        android:text="期限短，收益高"
+                        android:textSize="15dp" />
                 </RelativeLayout>
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical">
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1">
+
                     <TextView
                         android:id="@+id/bai111"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="%"
-                        android:layout_marginRight="10dp"
-                        android:textSize="15dp"
                         android:layout_alignParentRight="true"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="%"
+                        android:textSize="15dp" />
+
                     <TextView
                         android:id="@+id/wb111"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="11"
                         android:layout_toLeftOf="@id/bai111"
-                        android:textSize="25dp"/>
+                        android:text="11"
+                        android:textSize="25dp" />
+
                     <TextView
                         android:id="@+id/bl111"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="~"
-                        android:textSize="15dp"
                         android:layout_marginTop="7dp"
-                        android:layout_toLeftOf="@id/wb111"/>
+                        android:layout_toLeftOf="@id/wb111"
+                        android:text="~"
+                        android:textSize="15dp" />
+
                     <TextView
                         android:id="@+id/bai222"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="%"
-                        android:textSize="15dp"
+                        android:layout_marginTop="10dp"
                         android:layout_toLeftOf="@id/bl111"
-                        android:layout_marginTop="10dp"/>
+                        android:text="%"
+                        android:textSize="15dp" />
+
                     <TextView
                         android:id="@+id/wb222"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/bai222"
                         android:text="8"
-                        android:textSize="25dp"
-                        android:layout_toLeftOf="@id/bai222" />
+                        android:textSize="25dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="年化"
-                        android:textSize="15dp"
-                        android:layout_toLeftOf="@id/wb222"
+                        android:layout_marginRight="5dp"
                         android:layout_marginTop="6dp"
-                        android:layout_marginRight="5dp"/>
+                        android:layout_toLeftOf="@id/wb222"
+                        android:text="年化"
+                        android:textSize="15dp" />
                 </RelativeLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:orientation="horizontal"
-                android:background="#d4daff">
-            </LinearLayout>
+                android:background="#d4daff"
+                android:orientation="horizontal"></LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
                 android:background="#ffffff"
-                android:layout_marginBottom="10dp">
+                android:orientation="horizontal">
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical">
+
                     <TextView
                         android:id="@+id/licai4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:text="新人尊享"
-                        android:textSize="20dp"
-                        android:layout_marginLeft="10dp"
-                        />
+                        android:textSize="20dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="3大特权"
-                        android:textSize="20dp"
-                        android:textColor="#ffcc00"
                         android:layout_marginLeft="5dp"
-                        android:layout_toRightOf="@id/licai4"/>
+                        android:layout_toRightOf="@id/licai4"
+                        android:text="3大特权"
+                        android:textColor="#ffcc00"
+                        android:textSize="20dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="15000元体验金+无需充值+15%高收益"
-                        android:textSize="13dp"
+                        android:layout_below="@id/licai4"
                         android:layout_marginLeft="10dp"
-                        android:layout_below="@id/licai4"/>
+                        android:text="15000元体验金+无需充值+15%高收益"
+                        android:textSize="13dp" />
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_launcher"
                         android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"/>
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/ic_launcher" />
                 </RelativeLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:orientation="vertical"
-                android:background="#d4daff">
-            </LinearLayout>
-            <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="40dp"-->
-                <!--android:orientation="vertical"-->
-                <!--android:background="#ffffff">-->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="项目足值抵押+风险保证金双重保障"
-                    android:textSize="15dp"
-                    android:gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center_horizontal"/>
-            <!--</LinearLayout>-->
+                android:background="#d4daff"
+                android:orientation="vertical"></LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="项目足值抵押+风险保证金双重保障"
+                android:textSize="15dp" />
+
 
         </LinearLayout>
     </ScrollView>

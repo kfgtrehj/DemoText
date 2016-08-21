@@ -36,10 +36,14 @@ public class BaseActivity extends Activity {
 //        }
 //        tintManager.setStatusBarTintEnabled(true);
 //        tintManager.setStatusBarTintResource(R.color.white);//通知栏所需颜色
-
     }
+
     @TargetApi(19)
     protected void initWindow(int colorRes) {
+        /**
+         * 通知栏（notification）背景颜色跟随app导航栏（top title）背景颜色变化而变化
+         * @param colorRes
+         */
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 //			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
@@ -62,7 +66,10 @@ public class BaseActivity extends Activity {
        // mDecorView = getWindow().getDecorView();
     }
 
-
+    /**
+     * 设置通知栏的状态
+     * @param on
+     */
     private void setTranslucentStatus(boolean on) {
         Window win = getWindow();
         WindowManager.LayoutParams winParams = win.getAttributes();
@@ -82,4 +89,5 @@ public class BaseActivity extends Activity {
     public void showToast(String str){
         Toast.makeText(this,str,Toast.LENGTH_SHORT).show();
     }
+
 }
