@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+
+    android:orientation="vertical">
+
+    <include layout="@layout/title_layout" />
+
+
+
+ <!-- 理财产品布局 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/financialLayoutClickRange"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:background="@drawable/lin_check_select">
+
+            <View
+                android:id="@+id/makeColor1"
+                android:layout_width="4dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="12dp"
+                android:background="@color/home_product_purple"/>
+
+            <LinearLayout
+                android:id="@+id/financialLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/makeColor1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/financialTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="理财金计划"
+                        android:textColor="@color/text_gray"
+                        android:textSize="14sp"/>
+                    <com.flyco.roundview.RoundTextView
+                        android:id="@+id/financialHotLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="8dp"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:text="热卖"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        rv:rv_backgroundColor="@color/red_bg"
+                        rv:rv_isRadiusHalfHeight="true"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/financialDescr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="7天起，收益递增"
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/home_arrows"/>
+
+            <TextView
+                android:id="@+id/financialValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="40dp"
+                android:singleLine="true"
+                android:text="6%~15%"
+                android:textColor="@color/text_black"
+                android:textSize="14sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@id/financialValue"
+                android:singleLine="true"
+                android:text="年化"
+                android:textColor="@color/text_gray"
+                android:textSize="14sp"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/investClickRange"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/lin_check_select">
+
+            <View
+                android:id="@+id/makeColor2"
+                android:layout_width="4dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="12dp"
+                android:background="@color/text_orange"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/makeColor2"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/investTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="散标优品"
+                        android:textColor="@color/text_gray"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/investDescr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="3个月起，稳定收益"
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/home_arrows"/>
+
+            <TextView
+                android:id="@+id/investValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="40dp"
+                android:singleLine="true"
+                android:text="9%~13%"
+                android:textColor="@color/text_black"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@id/investValue"
+                android:singleLine="true"
+                android:text="年化"
+                android:textColor="@color/text_gray"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bondClickRange"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/lin_check_select">
+
+            <View
+                android:id="@+id/makeColor"
+                android:layout_width="4dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="12dp"
+                android:background="@color/text_blue"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/makeColor"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/bondTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="债权转让"
+                        android:textColor="@color/text_gray"
+                        android:textSize="14sp"/>
+
+                    <com.flyco.roundview.RoundTextView
+                        android:id="@+id/bondHotLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:text="热卖"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        rv:rv_backgroundColor="@color/red_bg"
+                        rv:rv_isRadiusHalfHeight="true"/>
+
+                    <com.flyco.roundview.RoundTextView
+                        android:id="@+id/bondHotNumber"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="8dp"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        rv:rv_backgroundColor="@color/red_bg"
+                        rv:rv_isRadiusHalfHeight="true"
+                        rv:rv_isWidthHeightEqual="true"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/bondDescr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="期限短，收益高"
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/home_arrows"/>
+
+            <TextView
+                android:id="@+id/bondValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="40dp"
+                android:singleLine="true"
+                android:text="11%~13%"
+                android:textColor="@color/text_black"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@id/bondValue"
+                android:singleLine="true"
+                android:text="年化"
+                android:textColor="@color/text_gray"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#d4daff"
+        android:orientation="vertical"></LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="项目足值抵押+风险保证金双重保障"
+        android:textSize="15dp" />
+
+
+
+
+</LinearLayout>

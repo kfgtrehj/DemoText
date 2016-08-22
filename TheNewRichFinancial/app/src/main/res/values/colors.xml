@@ -4,10 +4,26 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#FFFFFF</color>
-    <color name="gray">#d4daff</color>
+    <color name="gray">#F3F3F3</color>
     <color name="black">#000000</color>
     <color name="yellow">#FFBB00</color>
     <!-- 应用程序主颜色 用于title 等 -->
     <color name="title_blue">#575a75</color>
+
+    <!-- 3.0 背景颜色-->
+    <color name="gray_bg">#e7e9ef</color>
+    <color name="content_bg">#f3f5f7</color>
+    <color name="content_bg_press">#A9ABAC</color>
+
+    <!-- 产品入口，三个色条-->
+    <color name="text_blue">#53c9fe</color>
+    <color name="text_orange">#fe9519</color>
+    <color name="home_product_purple">#9d81d0</color>
+   <!-- 文本颜色 -->
+    <color name="text_black">#222222</color>
+    <color name="text_minor">#666666</color>
+    <color name="text_gray">#999999</color>
+<!-- 气泡的红色  项目中所有的红色，都用这个 -->
+    <color name="red_bg">#ff4f4f</color>
 
 </resources>

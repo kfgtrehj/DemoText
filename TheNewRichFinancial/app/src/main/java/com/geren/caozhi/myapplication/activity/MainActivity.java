@@ -107,9 +107,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 break;
         }
     }
-//    protected void onResume(){
-//        int id = getIntent().getIntExtra("id", 0);
-//        if (id == 2){
+    protected void onResume(){
+       int id = getIntent().getIntExtra("id", 0);
+           if (id == 2){
+               FriendFragment fragment =new FriendFragment();
+               replaceFragment(fragment);
 //            TabHost mTabHost = null;
 //            mTabHost.setCurrentTab(3);
 //            Fragment fragmen = new FriendFragment();
@@ -119,7 +121,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 //            mit();
 //            info_meun.setChecked(true);
 //            li.setVisibility(View.GONE);
-//            super.onResume();
-//        }
-//    }
+              super.onResume();
+
+        }
+  }
 }
