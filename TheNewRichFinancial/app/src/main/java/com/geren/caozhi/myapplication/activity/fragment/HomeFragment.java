@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 /**
  * Created by caozhi on 2016/7/5.
- * 主页面
+ * 理财主页面
  */
 public class HomeFragment extends Fragment implements View.OnClickListener{
 
