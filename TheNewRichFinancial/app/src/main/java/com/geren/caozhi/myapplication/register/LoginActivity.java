@@ -30,7 +30,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+//        initWindow(R.color.white);
         setContentView(R.layout.login_view);
 
         imageview = (ImageView) findViewById(R.id.imagemain);  //返回到主页面按钮

@@ -30,7 +30,7 @@
             <Button
                 android:layout_width="70dp"
                 android:layout_height="30dp"
-                android:text="活动"
+                android:text="动态"
                 android:gravity="center"
                 android:background="@drawable/list2"
                 android:textSize="25dp" />
