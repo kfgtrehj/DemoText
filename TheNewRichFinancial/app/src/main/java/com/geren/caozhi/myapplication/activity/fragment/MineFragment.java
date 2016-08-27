@@ -1,14 +1,13 @@
 package com.geren.caozhi.myapplication.activity.fragment;
 
-import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 
 import com.geren.caozhi.myapplication.R;
 
@@ -27,6 +26,7 @@ public class MineFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.mine, container, false);
 
+
         viewPager = (ViewPager) view.findViewById(R.id.viewPager1);
         viewPager.setAdapter(new MyViewPagerAdapter());
         return view;
@@ -42,6 +42,8 @@ public class MineFragment extends Fragment {
             views.add(view1);
             views.add(view2);
         }
+
+
         @Override
         public boolean isViewFromObject(View arg0, Object arg1) {
             return arg0 == arg1;
@@ -63,4 +65,5 @@ public class MineFragment extends Fragment {
             return views.get(position);
         }
     }
+
 }

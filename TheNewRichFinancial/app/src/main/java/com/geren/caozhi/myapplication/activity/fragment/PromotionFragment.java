@@ -34,7 +34,6 @@ public class PromotionFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.promotion_view,container,false);
 
-
             ArrayList<Map<String, Object>> lists = new ArrayList();
             for (int i = 0; i < images.length; i++) {
                 Map<String, Object> map = new HashMap<>();

@@ -8,7 +8,8 @@
 
     android:orientation="vertical">
 
-    <include layout="@layout/title_layout" />
+    <include layout="@layout/title_layout"
+        />
 
 
 
@@ -52,6 +53,9 @@
                         android:text="理财金计划"
                         android:textColor="@color/text_gray"
                         android:textSize="14sp"/>
+
+                    <!--因为要依赖别人项目做好的小气泡，所以在build.gradle中要一句：
+                    compile 'com.flyco.roundview:FlycoRoundView_Lib:1.1.4@aar'-->
                     <com.flyco.roundview.RoundTextView
                         android:id="@+id/financialHotLabel"
                         android:layout_width="wrap_content"

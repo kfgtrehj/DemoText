@@ -30,9 +30,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="7dp"
-                android:background="@drawable/promotion_left"
+                android:background="@drawable/promotion_left_color"
                 android:text="活动"
-                android:textColor="#ffffff" />
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/bt_dynamic"

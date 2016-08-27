@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,6 +37,7 @@ public class PromotionActivity extends BaseActivity implements View.OnClickListe
         bt_activity.setOnClickListener(this);
         bt_dynamic.setOnClickListener(this);
         image.setOnClickListener(this);
+
     }
 
     private void replaceFragment(Fragment newFragment) {
@@ -58,15 +60,24 @@ public class PromotionActivity extends BaseActivity implements View.OnClickListe
             case R.id.bt_activity:   //跳转到活动页面
                 fragment = new EventFragment();
                 replaceFragment(fragment);
+                bt_activity.setBackgroundDrawable(getResources().getDrawable(R.drawable.promotion_left_color));
+                bt_dynamic.setBackgroundDrawable(getResources().getDrawable(R.drawable.promotion_right));
+                bt_activity.setTextColor(Color.BLACK);
+                bt_dynamic.setTextColor(Color.WHITE);
                 break;
             case R.id.bt_dynamic:    //跳转到动态页面
                 fragment = new PromotionFragment();
                 replaceFragment(fragment);
+                bt_dynamic.setBackgroundDrawable(getResources().getDrawable(R.drawable.promotion_right_color));
+                bt_activity.setBackgroundDrawable(getResources().getDrawable(R.drawable.promotion_left));
+                bt_dynamic.setTextColor(Color.BLACK);
+                bt_activity.setTextColor(Color.WHITE);
                 break;
-            case R.id.image_event:
+            case R.id.image_event: //返回到主页面
                 intent.setClass(PromotionActivity.this, MainActivity.class);
                 PromotionActivity.this.finish();
                 break;
         }
     }
+
 }

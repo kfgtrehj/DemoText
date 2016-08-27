@@ -6,8 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
-
 
 import com.geren.caozhi.myapplication.R;
 
@@ -24,6 +22,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.home_view, container, false);
+
         financialPromotion = (ImageView) view.findViewById(R.id.financialPromotion);
         financialMore = (ImageView) view.findViewById(R.id.financialMore);
 
