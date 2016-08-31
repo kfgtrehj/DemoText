@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.geren.caozhi.myapplication">
 
-    <!--授权访问互联网-->
+    <!-- 授权访问互联网 -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,41 +13,30 @@
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <activity
             android:name=".activity.MainActivity"
-            android:launchMode="singleTop">
-
-        </activity>
-        <activity
-            android:name=".activity.MoreActivity"
             android:launchMode="singleTop"></activity>
         <activity
+            android:name=".activity.MoreActivity"
+            android:launchMode="singleTop" />
+        <activity
             android:name=".activity.guide.Guides"
-            android:launchMode="singleTop">
-
-        </activity>
-
+            android:launchMode="singleTop"></activity>
         <activity
             android:name=".activity.LoadActivity"
-            android:launchMode="singleTop">
-
-        </activity>
+            android:launchMode="singleTop"></activity>
         <activity
             android:name=".PromotionActivity"
             android:launchMode="singleTop">
+
+        </activity>
+        <activity android:name=".register.LoginActivity"></activity>
+        <activity android:name=".register.RegisterActivity"></activity>
+        <activity android:name=".activity.HttpTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".register.LoginActivity">
-
-
-        </activity>
-        <activity android:name=".register.RegisterActivity">
-
-        </activity>
-
-
-
     </application>
 
 </manifest>

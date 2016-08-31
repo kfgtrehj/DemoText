@@ -13,6 +13,8 @@ import com.geren.caozhi.myapplication.activity.fragment.HomeFragment;
 import com.geren.caozhi.myapplication.activity.fragment.MineFragment;
 import com.geren.caozhi.myapplication.tabbar.TabbarItem;
 
+import java.net.HttpURLConnection;
+
 /**
  * Created by Administrator on 2016/7/5.
  */
@@ -22,6 +24,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     private TabbarItem myTabbarItem2;
     private TabbarItem myTabbarItem3;
     private TabbarItem myTabbarItem4;
+
+    
 
 
     @Override
