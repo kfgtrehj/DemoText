@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.geren.caozhi.myapplication.R;
+import com.geren.caozhi.myapplication.bean.BorrowIndex;
+import com.geren.caozhi.myapplication.bean.BorrowPage;
+import com.geren.caozhi.myapplication.bean.Page;
 import com.geren.caozhi.myapplication.bean.UpdateBean;
 
 import org.apache.http.HttpEntity;
@@ -21,6 +24,8 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class HttpTestActivity extends AppCompatActivity {
 
     private Button requestBtn;
@@ -31,10 +36,12 @@ public class HttpTestActivity extends AppCompatActivity {
 
 
     final int RESPONSE = 0x01;
+    final int RESPONSE2 = 0x02;
     //线程之间的通信
     private Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
+
             super.handleMessage(msg);
             switch (msg.what){
                 case RESPONSE:
@@ -47,8 +54,26 @@ public class HttpTestActivity extends AppCompatActivity {
                     }else {
                         responseText.setText("当前已经是最新版本");
                     }
+                    break;
+                case RESPONSE2:
+                    BorrowIndex response2 = (BorrowIndex) msg.obj;
+                    System.out.println("顶层的数据" + "status = "
+                            +response2.getStatus() + "isFirst = "
+                            + response2.getIsFirst() + "子级 = "
+                            + response2.getBorrowPage().getClass().getName()
+                            + "\n" );
+                    System.out.println("borrowPage---->" + "pageSize = "
+                            +response2.getBorrowPage().getPageSize() + "pageNum = "
+                            + response2.getBorrowPage().getPageNum() + "array 大小  = "
+                            + response2.getBorrowPage().getPageArray().size() + "数组展开一行 = "
+                            + "\n" );
+                    System.out.println("page---->" + "borrow = "
+                            +response2.getBorrowPage().getPageArray().get(0).getBorrowWay() + "audiTime = "
+                            + response2.getBorrowPage().getPageArray().get(0).auditTime + "最底层结束"
+                            + "\n" );
 
                     break;
+
             }
 
         }
@@ -66,9 +91,74 @@ public class HttpTestActivity extends AppCompatActivity {
         requestBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sendRequestWithHttpClient();
+//                sendRequestWithHttpClient();
+                getBorrowIndexPage();
             }
         });
+    }
+
+    private void getBorrowIndexPage(){
+//
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                //创建一个HTTP 客户端 用于发起HTTP请求
+                HttpClient httpCient = new DefaultHttpClient();
+                //创建一个Get请求 url  = www.baidu.com
+                HttpGet httpGet = new HttpGet("https://m.sunfobank.com/borrow/app/1");
+
+                try {
+                    HttpResponse httpResponse = httpCient.execute(httpGet);
+                    if (httpResponse.getStatusLine().getStatusCode() == 200) {
+                        HttpEntity entity = httpResponse.getEntity();
+                        String response = EntityUtils.toString(entity,"utf-8");
+                        Message message = new Message();
+                        //第一步，把一个String数据，变成一个Json 对象
+                        JSONObject jsonObject = new JSONObject(response);
+                        //创建一个空数组
+                        ArrayList<Page> pages = new ArrayList<Page>();
+                        //为空的数组，循环增加一个Page对象
+                        for(int i = 0; i<jsonObject.getJSONObject("borrowsPage").getJSONArray("page").length(); i++){
+                            //创建一个空的Page对象
+                            Page page = new Page();
+                            //从json对象中，依靠层级关系，取出响应的 数据. 这里，先取一个整数数据，他是，第i个数据里的内容
+                            int borrow = jsonObject.getJSONObject("borrowsPage").getJSONArray("page").getJSONObject(i).getInt("borrowWay");
+                            //为空的page 添加数据。
+                            page.setBorrowWay(borrow);
+                            page.auditTime = jsonObject.getJSONObject("borrowsPage").getJSONArray("page").getJSONObject(i).getString("auditTime");
+                            //page 填充完毕后，把该页，添加进数组里。
+                            pages.add(page);
+                        }
+                        //创建一个borrowPage 对象
+                        BorrowPage borrowPage = new BorrowPage();
+                        //把数组装进 borrowPage
+                        borrowPage.setPageArray(pages);
+                        //装 pageSize
+                        borrowPage.setPageSize(jsonObject.getJSONObject("borrowsPage").getInt("pageSize"));
+                        //装pageNum
+                        borrowPage.setPageNum(jsonObject.getJSONObject("borrowsPage").getInt("pageNum"));
+                        //创建顶层 borrowIndex
+                        BorrowIndex borrowIndex = new BorrowIndex();
+
+                        //装数据
+                        borrowIndex.setStatus(jsonObject.getInt("status"));
+                        borrowIndex.setIsFirst(jsonObject.getInt("isFirst"));
+                        borrowIndex.setBorrowPage(borrowPage);
+
+                        message.what = RESPONSE2;
+                        message.obj = borrowIndex;
+                        //sendMessage 是一个方法。 他的作用是，可以发送一条"消息"。
+                        handler.sendMessage(message);
+
+                    }
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }.start();
+
     }
 
     private void sendRequestWithHttpClient(){
@@ -102,6 +192,7 @@ public class HttpTestActivity extends AppCompatActivity {
                         updateBean.setMessage(jsonObject.getString("message"));
                         //
                         message.obj = updateBean;
+                        //sendMessage 是一个方法。 他的作用是，可以发送一条"消息"。
                         handler.sendMessage(message);
 
                     }
