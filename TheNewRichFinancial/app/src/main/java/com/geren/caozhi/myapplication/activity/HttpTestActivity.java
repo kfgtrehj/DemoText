@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.geren.caozhi.myapplication.R;
@@ -16,23 +17,31 @@ import com.geren.caozhi.myapplication.bean.UpdateBean;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class HttpTestActivity extends AppCompatActivity {
 
-    private Button requestBtn;
+    private Button requestBtn,postRequest;
     private TextView responseText ,
             version, //版本号
             message, //信息
             downloadUrl; // 下载地址
+    private EditText account,password;
 
 
     final int RESPONSE = 0x01;
@@ -87,7 +96,9 @@ public class HttpTestActivity extends AppCompatActivity {
         version = (TextView) findViewById(R.id.version);
         message = (TextView) findViewById(R.id.message);
         downloadUrl = (TextView) findViewById(R.id.downloadUrl);
-
+        postRequest = (Button) findViewById(R.id.postRequest);
+        account = (EditText) findViewById(R.id.account);
+        password = (EditText) findViewById(R.id.password);
         requestBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,7 +106,60 @@ public class HttpTestActivity extends AppCompatActivity {
                 getBorrowIndexPage();
             }
         });
+        postRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getDataToPostRequest();
+            }
+        });
     }
+
+    private void getDataToPostRequest() {
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                //创建一个HTTP客户端
+                HttpClient httpClient = new DefaultHttpClient();
+                //创建一个post 请求
+                HttpPost httpPost = new HttpPost("https://m.sunfobank.com/user/app/login");
+                //创建一个集合， 集合对象中存放的是BasicNmaeValuePair 对象（map）
+                List<NameValuePair> formParams = new ArrayList<NameValuePair>();
+                formParams.add(new BasicNameValuePair("account", account.getText().toString()));
+                formParams.add(new BasicNameValuePair("password", password.getText().toString()));
+                formParams.add(new BasicNameValuePair("errorCount", "0"));
+                formParams.add(new BasicNameValuePair("imgCodeKey", "loginUser"));
+                formParams.add(new BasicNameValuePair("code", ""));
+
+                //创建一个把一个实体编码成url 形式
+                UrlEncodedFormEntity uefEntity;
+                try {
+                    //改变编码格式
+                    uefEntity = new UrlEncodedFormEntity(formParams, "UTF-8");
+                    //为这个Post请求，提供一个表单
+                    httpPost.setEntity(uefEntity);
+
+                    //返回结果集。 通过httpClient execute 方法
+                    HttpResponse response = httpClient.execute(httpPost);
+                    try {
+                        HttpEntity entity = response.getEntity();
+                        if (entity != null) {
+                            System.out.println("--------------------------------------");
+                            System.out.println("Response content: " + EntityUtils.toString(entity, "UTF-8"));
+                            System.out.println("--------------------------------------");
+                        }
+                    } finally {
+//                        response.close();
+                    }
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            }.start();
+    }
+
 
     private void getBorrowIndexPage(){
 //
@@ -107,6 +171,8 @@ public class HttpTestActivity extends AppCompatActivity {
                 HttpClient httpCient = new DefaultHttpClient();
                 //创建一个Get请求 url  = www.baidu.com
                 HttpGet httpGet = new HttpGet("https://m.sunfobank.com/borrow/app/1");
+
+
 
                 try {
                     HttpResponse httpResponse = httpCient.execute(httpGet);

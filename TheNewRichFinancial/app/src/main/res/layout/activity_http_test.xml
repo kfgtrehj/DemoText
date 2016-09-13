@@ -13,6 +13,24 @@
         android:text="检查更新"
         android:id="@+id/requestBtn"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="post请求"
+        android:id="@+id/postRequest"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入账号"
+        android:id="@+id/account"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="密码"
+        android:id="@+id/password"
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
